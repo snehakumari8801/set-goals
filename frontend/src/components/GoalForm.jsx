@@ -96,7 +96,7 @@ const GoalForm = () => {
           disabled={loading}
           className="bg-blue-500 h-12 w-[160px] rounded-md text-white mt-2 sm:mt-8"
         >
-          {loading ? "Adding Goal..." : "Add Goal"}
+          {loading ? "Adding Goal...." : "Add Goal"}
         </button>
       </form>
       {error && <p className="text-red-500 font-medium">{error}</p>}
