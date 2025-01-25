@@ -15,7 +15,7 @@ const UserDetails = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/users/${id}`);
+        const response = await axios.get(`${BASE_URL}/api/users/${id}`);
         setUserData(response.data);
       } catch (err) {
         console.error("Error fetching user details with goal tracking:", err);
