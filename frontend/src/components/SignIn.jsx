@@ -163,7 +163,7 @@ const SignIn = () => {
           >
             {isLoading ? (
               <div className="spinner-border animate-spin" role="status">
-                <span className="sr-only">Loading...</span>
+                <span className="sr-only h-10">Loading...</span>
               </div>
             ) : (
               "Sign In"
