@@ -8,7 +8,9 @@ const UserDetails = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
-  let BASE_URL = "http://localhost:3000/api";
+  // let BASE_URL = "http://localhost:3000/api";
+  let BASE_URL = 'https://set-goals.onrender.com';
+
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -27,7 +29,7 @@ const UserDetails = () => {
 
   const handleGoalAdded = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/users/${id}`);
+      const response = await axios.get(`${BASE_URL}/api/users/${id}`);
       setUserData(response.data);
     } catch (err) {
       console.error("Error fetching updated user details:", err);

@@ -8,11 +8,13 @@ const UserList = () => {
   const [sortOrder, setSortOrder] = useState("asc");
   const [selectedUserId, setSelectedUserId] = useState(null);
 
-  let BASE_URL = "http://localhost:3000/api";
+  // let BASE_URL = "http://localhost:3000/api";
+  let BASE_URL = 'https://set-goals.onrender.com';
+
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/users`)
+      .get(`${BASE_URL}/api/users`)
       .then((response) => setUsers(response.data))
       .catch((err) => console.error("Error fetching users:", err));
   }, []);

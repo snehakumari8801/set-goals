@@ -53,13 +53,15 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  let BASE_URL = 'http://localhost:3000/api'
+  //let BASE_URL = 'http://localhost:3000/api'
+  let BASE_URL = 'https://set-goals.onrender.com';
+
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BASE_URL}/auth/signin`, { email, password });
+      const response = await axios.post(`${BASE_URL}/api/auth/signin`, { email, password });
       localStorage.setItem('token', response.data.token);
       navigate('/userdetails');
     } catch (err) {

@@ -1,97 +1,3 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
-// import { useNavigate } from 'react-router-dom';
-
-// const SignUp = () => {
-//   const [name, setName] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [error, setError] = useState(null); 
-//   const [loading, setLoading] = useState(false);
-//   const navigate = useNavigate();
-// console.log(name);
-
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     if (!name || !email || !password) {
-//       setError('All fields are required');
-//       return;
-//     }
-
-//     const emailRegex = /\S+@\S+\.\S+/;
-//     if (!emailRegex.test(email)) {
-//       setError('Invalid email format');
-//       return;
-//     }
-
-//     setLoading(true); 
-//     try {
-//       const response = await axios.post('http://localhost:3000/api/auth/signup', 
-//       { name, email, password });
-//       console.log(response);
-      
-//       navigate('/signin');
-//     } catch (err) {
-//       setError(err.response?.data?.message || 'Error signing up');
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   return (
-//     <div className="sign-up-container">
-//       <h2>Create a New Account</h2>
-//       <form onSubmit={handleSubmit} className="sign-up-form">
-//         <div>
-//           <label>Name:</label>
-//           <input
-//             type="text"
-//             value={name}
-//             onChange={(e) => setName(e.target.value)}
-//             placeholder="Enter your name"
-//             required
-//           />
-//         </div>
-
-//         <div>
-//           <label>Email:</label>
-//           <input
-//             type="email"
-//             value={email}
-//             onChange={(e) => setEmail(e.target.value)}
-//             placeholder="Enter your email"
-//             required
-//           />
-//         </div>
-
-//         <div>
-//           <label>Password:</label>
-//           <input
-//             type="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             placeholder="Enter your password"
-//             required
-//           />
-//         </div>
-
-//         {error && <p className="error-message">{error}</p>}
-
-//         <button type="submit" disabled={loading}>
-//           {loading ? 'Signing Up...' : 'Sign Up'}
-//         </button>
-//       </form>
-
-//       <div className="sign-in-link">
-//         <p>Already have an account? <a href="/signin">Sign In</a></p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default SignUp;
 
 
 import React, { useState } from 'react';
@@ -106,7 +12,9 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  let BASE_URL = 'http://localhost:3000/api'
+  //let BASE_URL = 'http://localhost:3000/api'
+  let BASE_URL = 'https://set-goals.onrender.com';
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -124,7 +32,7 @@ const SignUp = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post(`${BASE_URL}/auth/signup`, { name, email, password });
+      const response = await axios.post(`${BASE_URL}/api/auth/signup`, { name, email, password });
       console.log(response);
 
       navigate('/');
